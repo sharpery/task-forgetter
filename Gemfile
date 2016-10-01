@@ -21,7 +21,7 @@ gem 'figaro', '1.0'
 
 gem 'bootstrap-sass'
 
-# gem 'faker'
+gem 'faker'
 
 gem 'devise'
 

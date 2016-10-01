@@ -1,0 +1,20 @@
+<h1>Tasks</h1>
+<%= link_to 'Add Task', new_item_path %>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created On</th>
+      <th>Date Due</th>
+      <th>Complete</th>
+    </tr>
+  </thead>
+  <% @items.each do |item| %>
+    <tr>
+      <th><%= item.title %></th>
+      <th><%= item.created_at.to_s(:short) %></th>
+      <th><%=  %></th>
+      <th><%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok' %></th>
+    </tr>
+  <% end %>
+</table>
