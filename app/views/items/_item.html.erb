@@ -1,8 +1,10 @@
 <h1>Tasks</h1>
+<br />
 <table style="width:100%">
   <thead>
     <tr>
       <th>Title</th>
+      <th>Description</th>
       <th>Created On</th>
       <th>Date Due</th>
       <th>Complete</th>
@@ -11,6 +13,7 @@
   <% @items.each do |item| %>
     <tr>
       <th><%= item.title %></th>
+      <th><%= item.body %></th>
       <th><%= item.created_at.to_s(:short) %></th>
       <th><%=  distance_of_time_in_words(Time.now, item.created_at + 7.days) %></th>
       <th><%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok'  %></th>

@@ -1,3 +1,11 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form-control-inline {
+    max-width: 300px;
+}
+.footer {
+  position:absolute;
+  bottom:30px;
+  width:100%;
+}

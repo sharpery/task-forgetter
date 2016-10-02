@@ -16,36 +16,28 @@ class ItemsController < ApplicationController
     @new_item = Item.new
     if @item.save
       flash[:notice] = 'Success!'
-      # redirect_to root_path, notice: 'Task saved'
+      redirect_to root_path, notice: 'Task saved'
     else
       flash[:alert] = 'Task failed to save.'
-      # render :new
-    end
-    respond_to do |format|
-      format.html
-      format.js
+      render :new
     end
   end
 
   def destroy
-    @item = Item.find_by_id(params[:item_id])
+    @item = Item.find(params[:id])
     if @item.destroy
       flash[:notice] = "Congratulations on completing your quest!"
-      # redirect_to root_path, notice: 'Task completed!'
+      redirect_to root_path, notice: 'Task completed!'
     else
       flash[:alert] = "Task couldn't be marked as complete. Please try again."
-      # redirect_to root_path
-    end
-    respond_to do |format|
-      format.html
-      format.js
+      redirect_to root_path
     end
   end
 
 
   private
   def item_params
-    params.require(:item).permit(:title)
+    params.require(:item).permit(:title, :body)
   end
 
 end

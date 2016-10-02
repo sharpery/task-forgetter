@@ -1,5 +1,7 @@
-<h1><%= current_user.email %> has lots to do!</h1>
-<div class='js-items-count'>
-  <%= pluralize(@user.items.count, 'item' ) %>
-</div>
-<p><%= link_to 'Tasks', user_session_path %></p>
+<h2>
+  You have
+  <%= pluralize(@user.items.count, 'task' ) %>
+  remaining!
+</h2>
+<br />
+<p><%= link_to 'Tasks', user_session_path %><p>

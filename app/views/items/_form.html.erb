@@ -1,8 +1,15 @@
-<h3>New Task</h3>
-<div class='new-item'>
+<h4>
+  Something else you ought to do?
+  <br />
+   (but you'll probably never get to?)
+ </h4>
+<div class='form-control-inline'>
   <%= form_for [item], remote: true do |f| %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter task name" %>
+    <br />
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 4, class: 'form-control', placeholder: "Ender task description" %>
     <%= f.submit "Save", class: 'btn btn-success' %>
   <% end %>
 </div>

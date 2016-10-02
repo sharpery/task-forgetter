@@ -1,7 +1,8 @@
-<%= link_to 'Profile', user_path(current_user) %>
 <div class='js-items'>
   <%= render partial: 'item' %>
 </div>
-<div class='new-item'>
+<br />
+<br />
+<div class='footer'>
   <%= render 'items/form', item: Item.new %>
 </div>
