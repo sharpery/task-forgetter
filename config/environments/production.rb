@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { host: 'ancient-bastion-38205.herokuapp.com' }
+  config.action_mailer.smtp_settings = {
+  :address => "127.0.0.1",
+  :port    => 3000,
+  :domain  => 'yourdomain.com'
+}
 
   # Code is not reloaded between requests.
   config.cache_classes = true
